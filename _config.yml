@@ -70,4 +70,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/xuchengcan/xuchengcan.github.io.git
-  branch: gh-pages
+  branch: master
