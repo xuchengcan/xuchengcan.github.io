@@ -71,3 +71,12 @@ deploy:
   type: git
   repo: https://github.com/xuchengcan/xuchengcan.github.io.git
   branch: master
+
+#搜索功能，field：all为全局搜索，post仅搜索post文章
+# 需要先安装插件：
+# npm install hexo-generator-search --save
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
