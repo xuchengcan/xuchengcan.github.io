@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Chen_nuo's Blog
-subtitle:
-description:
-author: chen_nuo
-language: 
-timezone:
+title: Chen_Nuo's Blog
+subtitle: 小打小闹，总是新的开始
+description: technology develop
+author: 晨诺
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: hexo-theme-next-5.1.0
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
