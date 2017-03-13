@@ -36,14 +36,15 @@
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">{{ config.title }}</span>
+        {% if theme.seo %}
+        <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
+        {% else %}
+        <p class="site-subtitle">{{ config.subtitle }}</p>
+        {% endif %}
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    {% if theme.seo %}
-    <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
-    {% else %}
-    <p class="site-subtitle">{{ config.subtitle }}</p>
-    {% endif %}
+
   </header>
   {% endif %}
 </div>
