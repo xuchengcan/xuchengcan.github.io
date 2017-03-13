@@ -1,4 +1,6 @@
 <div class="site-brand-wrapper">
+
+<!-- 重写Muse主题的头部，恢复时需完全恢复此段代码。
   <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
     {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
       <div class="site-meta-headline">
@@ -22,6 +24,30 @@
         <p class="site-subtitle">{{ config.subtitle }}</p>
       {% endif %}
   </div>
+
+-->
+
+<!-- 新的Muse主题头部 -->
+
+<div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
+  {% if theme.custom_logo.image or theme.scheme === 'Muse' %}
+  <header id="header"  itemscope="" itemtype="//schema.org/WPHeader">
+    <div class="custom-logo-site-title">
+      <a href="{{ config.root }}"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">{{ config.title }}</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    {% if theme.seo %}
+    <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
+    {% else %}
+    <p class="site-subtitle">{{ config.subtitle }}</p>
+    {% endif %}
+  </header>
+  {% endif %}
+</div>
+<!-- 新的Muse主题头部 -->
 
   <div class="site-nav-toggle">
     <button>

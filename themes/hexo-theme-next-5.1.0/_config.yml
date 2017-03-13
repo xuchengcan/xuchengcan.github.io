@@ -51,7 +51,7 @@ menu:
 #   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.
 #   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
-  enable: false
+  enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
@@ -70,8 +70,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-scheme: Mist
+scheme: Muse
+#scheme: Mist
 #scheme: Pisces
 
 
@@ -159,11 +159,13 @@ avatar: /images/avatar.jpg
 
 
 # Table Of Contents in the Sidebar
+#文章自动显示目录
 toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: true
+  #目录是否自动显示数字序号
+  number: false
 
 
 # Creative Commons 4.0 International License.
@@ -248,7 +250,7 @@ post_wordcount:
 
 
 # ---------------------------------------------------------------
-# Misc Theme Settings
+# Muse Theme Settings
 # ---------------------------------------------------------------
 
 # Custom Logo.
@@ -256,9 +258,10 @@ post_wordcount:
 # Options:
 #   enabled: [true/false] - Replace with specific image
 #   image: url-of-image   - Images's url
+# Muse主题下的首页图
 custom_logo:
   enabled: true
-  image: http://i8.17173.itc.cn/v3/outcms/2014/05/14/1400067169916_image_8527.jpg
+  image:
 
 
 # Code Highlight theme
