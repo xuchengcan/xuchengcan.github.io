@@ -6,7 +6,7 @@
 favicon: /chen_64x64.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "chennuo android"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -50,6 +50,7 @@ menu:
 #   Map a menu item to a specific FontAwesome icon name.
 #   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.
 #   When an question mask icon presenting up means that the item has no mapping icon.
+#   参考网站http://fontawesome.io/cheatsheet
 menu_icons:
   enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
@@ -286,7 +287,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 630c867aa19e2498ccbb66076f51b0c3
 
 # Duoshuo ShortName
 duoshuo_shortname: xchennuo
@@ -390,17 +391,17 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
-  # custom pv span for the whole site
+  # custom pv span for the whole site 全站访问量
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
-  # custom pv span for one page only
-  page_pv: true
+  # custom pv span for one page only 文章阅读量
+  page_pv: false
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
 

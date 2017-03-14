@@ -26,4 +26,5 @@ comments:
 **如果有人知道那个背景跟随鼠标移动式怎么实现的，还希望能得到分享**
 
 ### 网站sidebar设置
->/source/css/_common/components/sidebar/sidebar.styl
+>/layout/_macro/sidebar.swig    插入网易云音乐，放弃该操作，改为在个人页显示
+/source/css/_common/components/sidebar/sidebar.styl
