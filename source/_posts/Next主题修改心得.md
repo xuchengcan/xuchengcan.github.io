@@ -1,12 +1,14 @@
 ---
-title: Next主题修改心得
+title: 博客修改心得
 date: 2017-03-13 23:52:36
 tags: hexo-Next主题
 categories: 代码
 comments:
+keywords: hexo-Next
+description: 
 ---
 
-其实就是记录下自己修改Next主题的一些笔记
+其实就是记录下自己修改博客相关内容和Next主题的一些笔记
 
 <!-- more -->
 
@@ -28,3 +30,6 @@ comments:
 ### 网站sidebar设置
 >/layout/_macro/sidebar.swig    插入网易云音乐，放弃该操作，改为在个人页显示
 /source/css/_common/components/sidebar/sidebar.styl
+
+### 网站Seo相关设置
+>link： http://www.jianshu.com/p/86557c34b671
