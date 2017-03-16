@@ -414,6 +414,7 @@ tencent_mta: 500414817
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+# 百度推送，提高网站SEO
 baidu_push: true
 
 # Google Calendar
