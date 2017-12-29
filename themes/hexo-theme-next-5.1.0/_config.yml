@@ -6,7 +6,7 @@
 favicon: /chen_64x64.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "晨诺"
+keywords: "晨诺secret"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -290,7 +290,7 @@ mathjax:
 baidu_analytics: 630c867aa19e2498ccbb66076f51b0c3
 
 # Duoshuo ShortName
-duoshuo_shortname: xchennuo
+# duoshuo_shortname: xchennuo
 
 # Disqus
 #disqus_shortname:
@@ -307,7 +307,8 @@ duoshuo_shortname: xchennuo
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+# 来必力
+livere_uid: MTAyMC8zMjc2Ny85MzI4
 
 # Baidu Share
 # Available value:
@@ -322,7 +323,7 @@ duoshuo_shortname: xchennuo
 #add_this_id:
 
 # Share
-duoshuo_share: true
+# duoshuo_share: false
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -345,11 +346,11 @@ duoshuo_share: true
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: true
-  user_id: 6396239091242894081
-  admin_nickname: Author
+# duoshuo_info:
+#   ua_enable: true
+#   admin_enable: true
+#   user_id: 6396239091242894081
+#   admin_nickname: Author
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
@@ -537,4 +538,4 @@ alipay: /images/pay_ali.png
 
 
 # 多说热评文章 true 或者 false
-duoshuo_hotartical: true
+# duoshuo_hotartical: false

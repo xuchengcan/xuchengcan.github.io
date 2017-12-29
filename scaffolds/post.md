@@ -1,9 +1,14 @@
 ---
 title: {{ title }}
 date: {{ date }}
+updated: {{ date }}
 tags:
 categories:
+    - Android
 keywords:
 description:
-comments:
+comments: true
 ---
+
+
+<!-- more -->
