@@ -6,12 +6,12 @@ categories:
 comments: true
 date: 2018-01-09 21:07:08
 updated: 2018-01-09 21:07:08
-tags:
+tags: Android 开发艺术探索
 keywords:
 description:
 ---
 
-# 本文为 《Android 艺术开发探索》 第二章-IPC机制 的笔记下篇
+# 本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记下篇
 
 <!-- more -->
 

@@ -11,7 +11,7 @@ keywords:
 description:
 ---
 
-# 本文为 《Android 艺术开发探索》 第二章-IPC机制 的笔记上篇
+# 本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记上篇
 
 <!-- more -->
 
