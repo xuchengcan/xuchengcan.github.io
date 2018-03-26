@@ -64,38 +64,83 @@ ViewPager默认缓存左右相邻界面，为了避免不必要的重新数据�
 懒加载Fragment的实现：
 
 ```java
-    private boolean mIsInited;
+public abstract class BaseLazyFragment extends Fragment {
+
+    protected Context mContext;
+    protected boolean isInit;//loadLazyData 之后要设为 true ,防止重复加载
     private boolean mIsPrepared;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.demo, container, false);
-        mIsInited = true;
-        lazyLoad();
-        return root;
-    }
-    
-    public void lazyLoad(){
-        if (getUserVisibleHint()&&mIsPrepared&&!mIsInited){
-            //异步初始化
-            loadData();
-        }
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
-    private void loadData(){
-        new Thread(){
-            //UI
-        }.start();
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        if (getArguments() != null) {
+            getFragmentArguments(getArguments());
+        }
+        return inflater.inflate(getContentView(), container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(view, savedInstanceState);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mIsPrepared = true;
+        lazyLoad();
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser){
+        if (isVisibleToUser) {
             lazyLoad();
         }
     }
+
+    private void lazyLoad() {
+        if (getUserVisibleHint() && mIsPrepared && !isInit) {
+            //异步初始化
+            loadLazyData();
+        }
+    }
+
+    protected abstract void getFragmentArguments(Bundle args);
+
+    @LayoutRes
+    protected abstract int getContentView();
+
+    protected abstract void initView(View view, @Nullable Bundle savedInstanceState);
+
+    protected abstract void loadLazyData();
+
+    public void showToast(String content) {
+        ShowUtils.showToast(content);
+    }
+
+    /**
+     * 显示是否正在加载中
+     */
+    public void showLoading(boolean toggle) {
+        if (toggle) {
+            ShowUtils.showProgressDialog(mContext);
+        } else {
+            ShowUtils.dismissProgressDialog();
+        }
+    }
+
+
+}
 ```
 
 注：

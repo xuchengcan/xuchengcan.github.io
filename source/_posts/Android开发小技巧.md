@@ -55,3 +55,11 @@ public static void activityStart(Context context, String data1, String data2,…
 
 完成启动的写法。这样利于多人协作，调用其他人写的Activity时不用考虑传参细节。
 
+### Android 向上回退操作
+
+```java
+Intent intent = new Intent(this,xxx,class);
+intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+startActivity(intent);
+finish();
+```
