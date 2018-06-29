@@ -1,5 +1,5 @@
 ---
-title: Kotlin笔记-函数与Lambda表达式
+title: Kotlin笔记-函数与 Lambda 表达式
 tags: Kotlin
 categories:
   - Android
@@ -10,13 +10,9 @@ updated: 2018-06-25 10:30:05
 description:
 ---
 
+# 函数与 Lambda 表达式笔记
 
 <!-- more -->
-
-
-<!-- more -->
-
-# 函数与Lambda表达式
 
 ## 函数
 

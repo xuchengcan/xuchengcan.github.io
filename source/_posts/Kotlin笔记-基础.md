@@ -12,9 +12,9 @@ description:
 ---
 
 
-<!-- more -->
+# Kotlin 语法基础
 
-# 基础
+<!-- more -->
 
 ## 基本类型
 
