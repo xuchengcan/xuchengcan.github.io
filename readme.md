@@ -1,9 +1,9 @@
 ### 异地部署博客环境
 
 1.确保安装git、node.js、hexo
->https://git-scm.com/
+>https://git-scm.com/    
 https://nodejs.org/en/    
-https://hexo.io/zh-cn/docs/
+https://hexo.io/zh-cn/docs/    
 npm install hexo-cli -g   
 
 2.进入本地仓库执行hexo安装。不需要init！否则会覆盖原有配置。   
