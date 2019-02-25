@@ -544,7 +544,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2019/BroadcastReceiver/">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2019/Android/设备分辨率与Bitmap/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晨诺secret">
@@ -566,7 +566,244 @@
             
               
                 
-                <a class="post-title-link" href="/2019/BroadcastReceiver/" itemprop="url">
+                <a class="post-title-link" href="/2019/Android/设备分辨率与Bitmap/" itemprop="url">
+                  设备分辨率与Bitmap
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-22T10:28:13+08:00">
+                2019-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/Android/设备分辨率与Bitmap/" class="leancloud_visitors" data-flag-title="设备分辨率与Bitmap">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">  </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      516
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      2
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="设备分辨率"><a href="#设备分辨率" class="headerlink" title="设备分辨率"></a>设备分辨率</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">density</th>
+<th style="text-align:center">0.75</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">1.5</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">3.5</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">densityDpi</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">160</td>
+<td style="text-align:center">240</td>
+<td style="text-align:center">320</td>
+<td style="text-align:center">480</td>
+<td style="text-align:center">560</td>
+<td style="text-align:center">640</td>
+</tr>
+<tr>
+<td style="text-align:center">DpiFolder</td>
+<td style="text-align:center">ldpi</td>
+<td style="text-align:center">mdpi</td>
+<td style="text-align:center">hdpi</td>
+<td style="text-align:center">xhdpi</td>
+<td style="text-align:center">xxhdpi</td>
+<td style="text-align:center">xxxhdpi</td>
+<td style="text-align:center">xxxxhdpi</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Dpi范围</th>
+<th style="text-align:center">密度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>0dpi ~ 120dpi    |ldpi<br>120dpi ~ 160dpi    |mdpi<br>160dpi ~ 240dpi    |hdpi<br>240dpi ~ 320dpi    |xhdpi<br>320dpi ~ 480dpi    |xxhdpi<br>480dpi ~ 640dpi    |xxxhdpi</p>
+<h3 id="内存占用"><a href="#内存占用" class="headerlink" title="内存占用"></a>内存占用</h3><blockquote>
+<p>Bitmap内存占用 ≈ 像素数据总大小 = 图片宽 × 图片高× (设备分辨率/资源目录分辨率)^2 × 每个像素的字节大小</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/Android/设备分辨率与Bitmap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2019/Android/BroadcastReceiver/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晨诺secret">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen_Nuo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/Android/BroadcastReceiver/" itemprop="url">
                   BroadcastReceiver
                 </a>
               
@@ -634,7 +871,7 @@
 
           
           
-             <span id="/2019/BroadcastReceiver/" class="leancloud_visitors" data-flag-title="BroadcastReceiver">
+             <span id="/2019/Android/BroadcastReceiver/" class="leancloud_visitors" data-flag-title="BroadcastReceiver">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -699,7 +936,7 @@
 <p>然而有序广播是按照接收者声明的优先级别（声明在intent-filter元素的android:priority属性中，数越大优先级别越高,取值范围:-1000到1000。也可以调用IntentFilter对象的setPriority()进行设置），被接收者依次接收广播。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/BroadcastReceiver/#more" rel="contents">
+            <a class="btn" href="/2019/Android/BroadcastReceiver/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -742,7 +979,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/Android开发常用命令/">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/Android/Android开发常用命令/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晨诺secret">
@@ -764,7 +1001,7 @@
             
               
                 
-                <a class="post-title-link" href="/2018/Android开发常用命令/" itemprop="url">
+                <a class="post-title-link" href="/2018/Android/Android开发常用命令/" itemprop="url">
                   Android 开发常用命令
                 </a>
               
@@ -821,7 +1058,7 @@
 
           
           
-             <span id="/2018/Android开发常用命令/" class="leancloud_visitors" data-flag-title="Android 开发常用命令">
+             <span id="/2018/Android/Android开发常用命令/" class="leancloud_visitors" data-flag-title="Android 开发常用命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -887,7 +1124,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/Android开发常用命令/#more" rel="contents">
+            <a class="btn" href="/2018/Android/Android开发常用命令/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1703,7 +1940,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/IPC机制（下）/">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/Android/优秀开源项目记录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晨诺secret">
@@ -1725,7 +1962,196 @@
             
               
                 
-                <a class="post-title-link" href="/2018/IPC机制（下）/" itemprop="url">
+                <a class="post-title-link" href="/2018/Android/优秀开源项目记录/" itemprop="url">
+                  优秀开源项目记录
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T10:11:31+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/开源项目/" itemprop="url" rel="index">
+                    <span itemprop="name">开源项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/Android/优秀开源项目记录/" class="leancloud_visitors" data-flag-title="优秀开源项目记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">  </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      117
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      1
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h3 id="一款采用MVP模式的设计的仿造腾讯漫画的APP"><a href="#一款采用MVP模式的设计的仿造腾讯漫画的APP" class="headerlink" title="一款采用MVP模式的设计的仿造腾讯漫画的APP"></a>一款采用MVP模式的设计的仿造腾讯漫画的APP</h3><p><a href="https://github.com/zhhr1122/z_comic_new" target="_blank" rel="noopener">https://github.com/zhhr1122/z_comic_new</a></p>
+<h3 id="WanAndroid客户端Flutter版"><a href="#WanAndroid客户端Flutter版" class="headerlink" title="WanAndroid客户端Flutter版"></a>WanAndroid客户端Flutter版</h3><p><a href="https://github.com/canhuah/WanAndroid" target="_blank" rel="noopener">https://github.com/canhuah/WanAndroid</a></p>
+<p>在编写该案例过程中，遇到的一些问题，作者也做了总结：</p>
+<p><a href="http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html" target="_blank" rel="noopener">http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html</a></p>
+<h3 id="基于Flutter的开源中国客户端"><a href="#基于Flutter的开源中国客户端" class="headerlink" title="基于Flutter的开源中国客户端"></a>基于Flutter的开源中国客户端</h3><p><a href="https://github.com/yubo725/flutter-osc" target="_blank" rel="noopener">https://github.com/yubo725/flutter-osc</a></p>
+<h3 id="超完整开源Flutter-Github客户端"><a href="#超完整开源Flutter-Github客户端" class="headerlink" title="超完整开源Flutter Github客户端"></a>超完整开源Flutter Github客户端</h3><p><a href="https://github.com/CarGuo/GSYGithubAppFlutter" target="_blank" rel="noopener">https://github.com/CarGuo/GSYGithubAppFlutter</a></p>
+<h3 id="Android-骨架屏实现"><a href="#Android-骨架屏实现" class="headerlink" title="Android 骨架屏实现"></a>Android 骨架屏实现</h3><p><a href="https://github.com/sharish/ShimmerRecyclerView" target="_blank" rel="noopener">https://github.com/sharish/ShimmerRecyclerView</a></p>
+<p><a href="https://github.com/ethanhua/Skeleton" target="_blank" rel="noopener">https://github.com/ethanhua/Skeleton</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/Android/IPC机制（下）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晨诺secret">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen_Nuo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/Android/IPC机制（下）/" itemprop="url">
                   IPC机制（下）
                 </a>
               
@@ -1793,7 +2219,7 @@
 
           
           
-             <span id="/2018/IPC机制（下）/" class="leancloud_visitors" data-flag-title="IPC机制（下）">
+             <span id="/2018/Android/IPC机制（下）/" class="leancloud_visitors" data-flag-title="IPC机制（下）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1856,418 +2282,7 @@
           <h1 id="本文为-《Android-开发艺术探索》-第二章-IPC机制-的笔记下篇"><a href="#本文为-《Android-开发艺术探索》-第二章-IPC机制-的笔记下篇" class="headerlink" title="本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记下篇"></a>本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记下篇</h1>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/IPC机制（下）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2018/IPC机制（上）/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="晨诺secret">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chen_Nuo's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/IPC机制（上）/" itemprop="url">
-                  IPC 机制（上）
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text"> </span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T12:23:56+08:00">
-                2018-01-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text"> </span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/IPC/" itemprop="url" rel="index">
-                    <span itemprop="name">IPC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/IPC机制（上）/" class="leancloud_visitors" data-flag-title="IPC 机制（上）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">  </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  
-                    <span class="post-meta-item-text"> </span>
-                  
-                    <span title=" " }}"="">
-                      1.9k
-                    </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  
-                    <span class="post-meta-item-text"> </span>
-                  
-                    <span title=" " }}"="">
-                      7
-                    </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="本文为-《Android-开发艺术探索》-第二章-IPC机制-的笔记上篇"><a href="#本文为-《Android-开发艺术探索》-第二章-IPC机制-的笔记上篇" class="headerlink" title="本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记上篇"></a>本文为 《Android 开发艺术探索》 第二章-IPC机制 的笔记上篇</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/IPC机制（上）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2017/Activity四种启动模式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="晨诺secret">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chen_Nuo's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/Activity四种启动模式/" itemprop="url">
-                  Activity四种启动模式
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text"> </span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T11:06:31+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text"> </span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/四大组件/" itemprop="url" rel="index">
-                    <span itemprop="name">四大组件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/Activity四种启动模式/" class="leancloud_visitors" data-flag-title="Activity四种启动模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">  </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                  
-                    <span class="post-meta-item-text"> </span>
-                  
-                    <span title=" " }}"="">
-                      1.4k
-                    </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                  
-                    <span class="post-meta-item-text"> </span>
-                  
-                    <span title=" " }}"="">
-                      5
-                    </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="在-Activity-的多-Activity-开发中，Activity-之间的跳转可能需要有多种方式，有时是普通的生成一个新实例，有时希望跳转到原来某个-Activity-实例，而不是生成大量的重复的-Activity。加载模式便是决定以哪种方式启动一个跳转到原来某个-Activity-实例。"><a href="#在-Activity-的多-Activity-开发中，Activity-之间的跳转可能需要有多种方式，有时是普通的生成一个新实例，有时希望跳转到原来某个-Activity-实例，而不是生成大量的重复的-Activity。加载模式便是决定以哪种方式启动一个跳转到原来某个-Activity-实例。" class="headerlink" title="在 Activity 的多 Activity 开发中，Activity 之间的跳转可能需要有多种方式，有时是普通的生成一个新实例，有时希望跳转到原来某个 Activity 实例，而不是生成大量的重复的 Activity。加载模式便是决定以哪种方式启动一个跳转到原来某个 Activity 实例。"></a>在 Activity 的多 Activity 开发中，Activity 之间的跳转可能需要有多种方式，有时是普通的生成一个新实例，有时希望跳转到原来某个 Activity 实例，而不是生成大量的重复的 Activity。加载模式便是决定以哪种方式启动一个跳转到原来某个 Activity 实例。</h4><p>在 Activity 里，有 4 种 Activity 的启动模式，分别为：</p>
-<ul>
-<li><p>standard: 标准模式，一调用startActivity()方法就会产生一个新的实例。在这种模式下，activity默认会进入启动它的activity所属的任务栈中。注意：在非activity类型的context (如 ApplicationContext )并没有所谓的任务栈，所以不能通过ApplicationContext去启动standard模式的activity。</p>
-</li>
-<li><p>singleTop: 栈顶复用模式。如果已经有一个实例位于Activity栈的顶部时，就不产生新的实例，而只是调用Activity中的newInstance()方法。如果不位于栈顶，会产生一个新的实例。注意：这个activity的onCreate，onStart，onResume不会被回调，因为他们并没有发生改变。</p>
-</li>
-<li><p>singleTask: 栈内复用模式。首先会根据taskAffinity去寻找当前是否存在一个对应名字的任务栈。</p>
-<ul>
-<li>如果不存在，则会创建一个新的Task，并创建新的Activity实例入栈到新创建的Task中去。</li>
-<li>如果存在，则得到该任务栈，查找该任务栈中是否存在该Activity实例 。<ul>
-<li>如果存在实例，则将它上面的Activity实例都出栈，然后回调启动的Activity实例的onNewIntent方法。</li>
-<li>如果不存在该实例，则新建Activity，并入栈</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>singleInstance: 这个跟singleTask基本上是一样，只有一个区别：这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/Activity四种启动模式/#more" rel="contents">
+            <a class="btn" href="/2018/Android/IPC机制（下）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2364,7 +2379,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
