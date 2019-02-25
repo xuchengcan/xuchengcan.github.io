@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度         0dpi ~ 120dpi    |ldpi120dpi ~ 160dpi">
+<meta name="description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度     0dpi ~ 120dpi ldpi   120dpi ~ 160dpi mdpi">
 <meta name="keywords" content="Bitmap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设备分辨率与Bitmap">
 <meta property="og:url" content="http://chennuo.online/2019/Android/设备分辨率与Bitmap/index.html">
 <meta property="og:site_name" content="Chen_Nuo&#39;s Blog">
-<meta property="og:description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度         0dpi ~ 120dpi    |ldpi120dpi ~ 160dpi">
+<meta property="og:description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度     0dpi ~ 120dpi ldpi   120dpi ~ 160dpi mdpi">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-02-22T02:28:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设备分辨率与Bitmap">
-<meta name="twitter:description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度         0dpi ~ 120dpi    |ldpi120dpi ~ 160dpi">
+<meta name="twitter:description" content="设备分辨率   density 0.75 1 1.5 2 3 3.5 4     densityDpi 120 160 240 320 480 560 640   DpiFolder ldpi mdpi hdpi xhdpi xxhdpi xxxhdpi xxxxhdpi       Dpi范围 密度     0dpi ~ 120dpi ldpi   120dpi ~ 160dpi mdpi">
 
 
 
@@ -453,7 +453,7 @@
                     <span class="post-meta-item-text"> </span>
                   
                     <span title=" " }}"="">
-                      516
+                      508
                     </span>
               
 
@@ -533,11 +533,31 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"></td>
+<td style="text-align:center">0dpi ~ 120dpi</td>
+<td style="text-align:center">ldpi</td>
+</tr>
+<tr>
+<td style="text-align:center">120dpi ~ 160dpi</td>
+<td style="text-align:center">mdpi</td>
+</tr>
+<tr>
+<td style="text-align:center">160dpi ~ 240dpi</td>
+<td style="text-align:center">hdpi</td>
+</tr>
+<tr>
+<td style="text-align:center">240dpi ~ 320dpi</td>
+<td style="text-align:center">xhdpi</td>
+</tr>
+<tr>
+<td style="text-align:center">320dpi ~ 480dpi</td>
+<td style="text-align:center">xxhdpi</td>
+</tr>
+<tr>
+<td style="text-align:center">480dpi ~ 640dpi</td>
+<td style="text-align:center">xxxhdp</td>
 </tr>
 </tbody>
 </table>
-<p>0dpi ~ 120dpi    |ldpi<br>120dpi ~ 160dpi    |mdpi<br>160dpi ~ 240dpi    |hdpi<br>240dpi ~ 320dpi    |xhdpi<br>320dpi ~ 480dpi    |xxhdpi<br>480dpi ~ 640dpi    |xxxhdpi</p>
 <h3 id="内存占用"><a href="#内存占用" class="headerlink" title="内存占用"></a>内存占用</h3><blockquote>
 <p>Bitmap内存占用 ≈ 像素数据总大小 = 图片宽 × 图片高× (设备分辨率/资源目录分辨率)^2 × 每个像素的字节大小</p>
 </blockquote>
@@ -602,7 +622,6 @@
 </tbody>
 </table>
 <p>像素(pixel data)数据存放|    native heap|    Java heap    |native heap</p>
-<p><a href="https://www.jianshu.com/p/d5714e8987f3" target="_blank" rel="noopener">Android Bitmap变迁与原理解析（4.x-8.x）</a></p>
 <blockquote>
 <p>如果没有在AndroidManifest中启用largeheap，那么Java 堆内存达到192M的时候就会崩溃，对于现在动辄4G的手机而言，存在严重的资源浪费，ios的一个APP几乎能用近所有的可用内存（除去系统开支），8.0之后，Android也向这个方向靠拢，最好的下手对象就是Bitmap，因为它是耗内存大户。图片内存被转移到native之后，一个APP的图片处理不仅能使用系统绝大多数内存，还能降低Java层内存使用，减少OOM风险。不过，内存无限增长的情况下，也会导致APP崩溃，但是这种崩溃已经不是OOM崩溃了，Java虚拟机也不会捕获，按道理说，应该属于linux的OOM了。</p>
 </blockquote>
@@ -1238,7 +1257,7 @@
  
 
   <script type="text/javascript" color="110,80,70" opacity="0.7" count="50" src="/js/src/canvas-nest.js"></script>
-</body>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.0.5/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":125,"height":180,"position":"left","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.05},"react":{"opacityDefault":1,"opacityOnHover":0.2},"log":false});</script></body>
 
 </html>
 
