@@ -1,0 +1,1204 @@
+<!doctype html>    
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="晨诺secret">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chen_Nuo's Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/chen_64x64.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="内容包括 启动顺序 生命周期 三个时期 Activity 栈 Activity 状态 面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activity 基本介绍">
+<meta property="og:url" content="http://chennuo.online/2017/Activity/index.html">
+<meta property="og:site_name" content="Chen_Nuo&#39;s Blog">
+<meta property="og:description" content="内容包括 启动顺序 生命周期 三个时期 Activity 栈 Activity 状态 面试题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-29T03:00:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Activity 基本介绍">
+<meta name="twitter:description" content="内容包括 启动顺序 生命周期 三个时期 Activity 栈 Activity 状态 面试题">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chennuo.online/2017/Activity/">
+
+
+
+
+
+  <title> Activity 基本介绍 | Chen_Nuo's Blog </title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?630c867aa19e2498ccbb66076f51b0c3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=61152563";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500414817");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+    
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+
+<!-- 重写Muse主题的头部，恢复时需完全恢复此段代码。
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chen_Nuo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Dream It Possible</h1>
+      
+  </div>
+
+-->
+
+<!-- 新的Muse主题头部 -->
+
+<div class="site-meta custom-logo">
+  
+  <header id="header" itemscope="" itemtype="//schema.org/WPHeader">
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chen_Nuo's Blog</span>
+        
+        <h1 class="site-subtitle" itemprop="description">Dream It Possible</h1>
+        
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+
+  </header>
+  
+</div>
+<!-- 新的Muse主题头部 -->
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            日志
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="全局搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://chennuo.online/2017/Activity/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="晨诺secret">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen_Nuo's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Activity 基本介绍
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T11:00:45+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text"> </span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/四大组件/" itemprop="url" rel="index">
+                    <span itemprop="name">四大组件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/Activity/" class="leancloud_visitors" data-flag-title="Activity 基本介绍">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">  </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      1.9k
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text"> </span>
+                  
+                    <span title=" " }}"="">
+                      6
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="内容包括"><a href="#内容包括" class="headerlink" title="内容包括"></a>内容包括</h3><ul>
+<li>启动顺序</li>
+<li>生命周期</li>
+<li>三个时期</li>
+<li>Activity 栈</li>
+<li>Activity 状态</li>
+<li>面试题</li>
+</ul>
+<a id="more"></a>
+<h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><h3 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h3><ul>
+<li>第一个Activity启动时：</li>
+</ul>
+<p>onCreate()——&gt;onStart()——&gt;onResume()</p>
+<ul>
+<li>当另一个Activity启动时:</li>
+</ul>
+<p>第一个Activity onPause()——&gt;第二个Activity onCreate()——&gt;onStart()——&gt;onResume()</p>
+<p>——&gt;第一个Activity onStop()</p>
+<ul>
+<li>当返回到第一个Activity时：</li>
+</ul>
+<p>第二个Activity onPause() ——&gt; 第一个Activity　onRestart()——&gt;onStart()——&gt;onResume()</p>
+<p>——&gt;第二个Activity onStop()——&gt;onDestroy()</p>
+<h4 id="一个Activity的销毁顺序"><a href="#一个Activity的销毁顺序" class="headerlink" title="一个Activity的销毁顺序:"></a>一个Activity的销毁顺序:</h4><p>（情况一）onPause()——&gt;&lt;Process Killed&gt;</p>
+<p>（情况二）onPause()——&gt;onStop()——&gt;&lt;Process Killed&gt;</p>
+<p>（情况三）onPause()——&gt;onStop()——&gt;onDestroy()</p>
+<p>但是当一个活动的状态发生改变的时候，开发者可以通过调用 onXX() 的方法获取到相关的通知信息。</p>
+<p>在实现 Activity 类的时候，通过覆盖（ override ）这些方法即可在你需要处理的时候来调用。</p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ol>
+<li><strong>onCreate</strong> ：当活动第一次启动的时候，触发该方法，可以在此时完成活动的初始化工作。onCreate 方法有一个参数，该参数可以为空（ null ），也可以是之前调用 onSaveInstanceState （）方法保存的状态信息。</li>
+<li><strong>onStart</strong> ：该方法的触发表示所属活动将被展现给用户。<strong>活动由不可见变为可见的时候调用</strong></li>
+<li><strong>onResume</strong> ：当一个活动和用户发生交互的时候，触发该方法。<strong>此时的活动一定位于返回栈的栈顶，并且处于运行状态。</strong></li>
+<li><strong>onPause</strong> ：当一个正在前台运行的活动因为其他的活动需要前台运行而转入后台运行的时候，触发该方法。这时候需要将活动的状态持久化，比如正在编辑的数据库记录等。<strong>我们通常会在这个方法中将一些及其消耗 CPU 的资源释放掉（比如显示地图或者大规模图形），以及保存一些关键数据（比如用户输入的数据等等），但这个方法的执行速度一定要快，不然会影响到新的栈顶活动的使用。</strong></li>
+<li><strong>onStop</strong> ：当一个活动不再需要展示给用户的时候，触发该方法。如果内存紧张，系统会直接结束这个活动，而不会触发 onStop 方法。 所以保存状态信息是应该在onPause时做，而不是onStop时做。活动如果没有在前台运行，都将被停止或者Linux管理进程为了给新的活动预留足够的存储空间而随时结束这些活动。因此对于开发者来说，在设计应用程序的时候，必须时刻牢记这一原则。在一些情况下，onPause方法或许是活动触发的最后的方法，因此开发者需要在这个时候保存需要保存的信息。</li>
+<li><strong>onRestart</strong> ：当处于停止状态的活动需要再次展现给用户的时候，触发该方法。</li>
+<li><p><strong>onDestroy</strong> ：当活动销毁的时候，触发该方法。和 onStop 方法一样，如果内存紧张，系统会直接结束这个活动而不会触发该方法。</p>
+</li>
+<li><p><strong>onSaveInstanceState</strong>：系统调用该方法，允许活动保存之前的状态，比如说在一串字符串中的光标所处的位置等。通常情况下，开发者不需要重写覆盖该方法，在默认的实现中，已经提供了自动保存活动所涉及到的用户界面组件的所有状态信息。</p>
+</li>
+</ol>
+<h3 id="三个时期"><a href="#三个时期" class="headerlink" title="三个时期"></a>三个时期</h3><ul>
+<li><p>完整生存期  </p>
+</li>
+<li><p>活动在<code>onCreate()</code>方法和<code>onDestroy()</code>方法之间所经历的，就是完整生存期。一般情况下，一个活动会在<code>onCreate()</code>方法中完成各种初始化操作，而在<code>onDestroy()</code>方法中完成释放内存的操作。</p>
+</li>
+<li><p>可见生存期<br><strong>划重点！！！这个问题我就在面试中遇到了，其实我知晓这个题，怎奈误解了面试官的意思答非所问了。</strong>活动在<code>onStart()</code>方法和<code>onStop()</code>方法之间所经历的，就是可见生存期。在可见生存期内， 活动对于用户总是可见的， 即便有可能无法和用户进行交互。 我们可以通过这两个方法，合理地管理那些对用户可见的资源。比如在<code>onStart()</code>方法中对资源进行加载，而在<code>onStop()</code>方法中对资源进行释放， 从而保证处于停止状态的活动不会占用过多内存。</p>
+</li>
+<li><p>前台生存期<br>活动在<code>onResume()</code>方法和<code>onPause()</code>方法之间所经历的，就是前台生存期。在前台生存期内， 活动总是处于运行状态的， 此时的活动是可以和用户进行相互的， 我们平时看到和接触最多的也这个状态下的活动。</p>
+</li>
+</ul>
+<h3 id="Activity-栈"><a href="#Activity-栈" class="headerlink" title="Activity 栈"></a>Activity 栈</h3><p>上面提到开发者是无法控制Activity的状态的，那Activity的状态又是按照何种逻辑来运作的呢？这就要知道 Activity 栈。每个Activity的状态是由它在Activity栈（是一个后进先出LIFO，包含所有正在运行Activity的队列）中的位置决定的。当一个新的Activity启动时，当前的活动的Activity将会移到Activity栈的顶部。如果用户使用后退按钮返回的话，或者前台的Activity结束，活动的Activity就会被移出栈消亡，而在栈上的上一个活动的Activity将会移上来并变为活动状态。一个应用程序的优先级是受最高优先级的Activity影响的。当决定某个应用程序是否要终结去释放资源，Android内存管理使用栈来决定基于Activity的应用程序的优先级。</p>
+<h3 id="Activity状态"><a href="#Activity状态" class="headerlink" title="Activity状态"></a>Activity状态</h3><p>一般认为Activity有以下四种状态：</p>
+<ul>
+<li><p>活动的：当一个Activity在栈顶，它是可视的、有焦点、可接受用户输入的。Android试图尽最大可能保持它活动状态，杀死其它Activity来确保当前活动Activity有足够的资源可使用。当另外一个Activity被激活，这个将会被暂停。</p>
+</li>
+<li><p>暂停：在很多情况下，你的Activity可视但是它没有焦点，换句话说它被暂停了。有可能原因是一个透明或者非全屏的Activity被激活。当被暂停，一个Activity仍会当成活动状态，只不过是不可以接受用户输入。在极特殊的情况下，Android将会杀死一个暂停的Activity来为活动的Activity提供充足的资源。当一个Activity变为完全隐藏，它将会变成停止。</p>
+</li>
+<li><p>停止：当一个Activity不是可视的，它“停止”了。这个Activity将仍然在内存中保存它所有的状态和会员信息。尽管如此，当其它地方需要内存时，它将是最有可能被释放资源的。当一个Activity停止后，一个很重要的步骤是要保存数据和当前UI状态。一旦一个Activity退出或关闭了，它将变为待用状态。</p>
+</li>
+<li><p>待用： 在一个Activity被杀死后和被装在前，它是待用状态的。待用Acitivity被移除Activity栈，并且需要在显示和可用之前重新启动它。</p>
+</li>
+</ul>
+<h3 id="面试题："><a href="#面试题：" class="headerlink" title="面试题："></a>面试题：</h3><ul>
+<li>Activity A 通过 Intent 显示启动了 Activity B，当 B 处于可见状态后，A 是否一定会调用<code>onStop()</code>?</li>
+</ul>
+<p>不一定，有可能A此时仍然可见，例如B是一个DialogActivity，或者其他A仍可见的情况。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/pay_wechat.png" alt="晨诺secret WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/pay_ali.png" alt="晨诺secret Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/Server/" rel="next" title="Server">
+                <i class="fa fa-chevron-left"></i> Server
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/Activity四种启动模式/" rel="prev" title="Activity四种启动模式">
+                Activity四种启动模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+ 
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjc2Ny85MzI4"></div>
+    
+  </div>
+
+
+        </div>
+         
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="晨诺secret">
+          <p class="site-author-name" itemprop="name">晨诺secret</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xuchengcan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容包括"><span class="nav-text">内容包括</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Activity"><span class="nav-text">Activity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动顺序"><span class="nav-text">启动顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个Activity的销毁顺序"><span class="nav-text">一个Activity的销毁顺序:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三个时期"><span class="nav-text">三个时期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity-栈"><span class="nav-text">Activity 栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity状态"><span class="nav-text">Activity状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题："><span class="nav-text">面试题：</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+ 
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">晨诺secret</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+ 
+
+<div class="busuanzi-count">
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+
+</div>
+
+
+ 
+      </div>
+    </footer>
+
+    
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i> 
+    </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+ 
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+ 
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+ 
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="local-search-pop-overlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+ 
+ 
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("n5qNIGpzt4XP9WJu0O82KtVm-gzGzoHsz", "SK1Xwf1LdJxXDa4j813Txg3o");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+ 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+ 
+ 
+
+  <script type="text/javascript" color="110,80,70" opacity="0.7" count="50" src="/js/src/canvas-nest.js"></script>
+</body>
+
+</html>
+
+<!--
+浅蓝色线条
+color: 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+opacity: 线条透明度（0~1）, 默认: 0.5
+count: 线条的总数量, 默认: 150
+zIndex: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
+
+<script type="text/javascript" src="/js/src/canvas-nest.js" count="50" zindex="-2" opacity="1" color="0,104,183">
+</script>
+ -->
