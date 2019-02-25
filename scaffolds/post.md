@@ -1,14 +1,16 @@
 ---
 title: {{ title }}
 date: {{ date }}
-updated: {{ date }}
+updated: {{ updated }}
 tags:
 categories:
     - Android
-keywords:
+keywords: {{ title }}
 description:
 comments: true
 ---
 
 
 <!-- more -->
+
+参考链接：  

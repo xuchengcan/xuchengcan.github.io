@@ -5,7 +5,7 @@ categories:
   - 四大组件
 comments: true
 date: 2017-12-29 11:06:31
-updated: 2017-12-29 11:06:31
+updated: 2019-02-25 11:06:31
 tags:
 keywords:
 description:
@@ -15,13 +15,19 @@ description:
 
 在 Activity 里，有 4 种 Activity 的启动模式，分别为：
 
-* standard: 标准模式，一调用startActivity()方法就会产生一个新的实例。
+* standard: 标准模式，一调用startActivity()方法就会产生一个新的实例。在这种模式下，activity默认会进入启动它的activity所属的任务栈中。注意：在非activity类型的context (如 ApplicationContext )并没有所谓的任务栈，所以不能通过ApplicationContext去启动standard模式的activity。
 
-* singleTop: 如果已经有一个实例位于Activity栈的顶部时，就不产生新的实例，而只是调用Activity中的newInstance()方法。如果不位于栈顶，会产生一个新的实例。
+* singleTop: 栈顶复用模式。如果已经有一个实例位于Activity栈的顶部时，就不产生新的实例，而只是调用Activity中的newInstance()方法。如果不位于栈顶，会产生一个新的实例。注意：这个activity的onCreate，onStart，onResume不会被回调，因为他们并没有发生改变。
 
-* singleTask: 会在一个新的task中产生这个实例，以后每次调用都会使用这个，不会去产生新的实例了。
+* singleTask: 栈内复用模式。首先会根据taskAffinity去寻找当前是否存在一个对应名字的任务栈。
+  - 如果不存在，则会创建一个新的Task，并创建新的Activity实例入栈到新创建的Task中去。
+  - 如果存在，则得到该任务栈，查找该任务栈中是否存在该Activity实例 。
+    - 如果存在实例，则将它上面的Activity实例都出栈，然后回调启动的Activity实例的onNewIntent方法。
+    - 如果不存在该实例，则新建Activity，并入栈
 
-* singleInstance: 这个跟singleTask基本上是一样，只有一个区别：在这个模式下的Activity实例所处的task中，只能有这个activity实例，不能有其他的实例。
+
+* singleInstance: 这个跟singleTask基本上是一样，只有一个区别：这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。
+
 
 <!-- more -->
 
@@ -32,10 +38,6 @@ description:
 * singleTop: **当且仅当启动的 Activity 和上一个 Activity 一致的时候才会通过调用`onNewIntent()`方法重用 Activity。**使用场景：资讯阅读类 APP 的内容界面。
 
 * singleTask：浏览器的主页面，或者大部分 APP 的主页面。
-
-
-
-
 
 这些启动模式可以在功能清单文件AndroidManifest.xml中进行设置，中的launchMode属性。相关的代码中也有一些标志可以使用,比如我们想只启用一个实例,则可以使用 Intent.FLAG_ACTIVITY_REORDER_TO_FRONT 标志，这个标志表示：如果这个activity已经启动了，就不产生新的activity，而只是把这个activity实例加到栈顶来就可以了。
 

@@ -28,7 +28,7 @@ npm install hexo-cli -g
 - hexo new draft 草稿 发布草稿文件
 - hexo publish \[layout\] \<title\> 将草稿文件转移到发布文件
 
-检查 package.json 是否有更新的命令
+### 检查 package.json 是否有更新的命令
 
 > npm outdated
 

@@ -6,7 +6,7 @@ categories:
 comments: true
 date: 2018-07-20 13:44:11
 updated: 2018-07-20 13:44:11
-tags: Android 开发艺术探索
+tags: Android开发艺术探索,自定义View
 keywords:
 description:
 ---
@@ -32,6 +32,22 @@ x 和 y 是 View 左上角的坐标，而 translationX 和 translationY 是 View
 
 > x = left + translationX  
 > y = top + translationY
+
+### View 的测量
+
+MeasureSpec封装了父布局传递给子布局的布局要求，每个MeasureSpec代表了一组宽度和高度的要求，MeasureSpec由size和mode组成。  
+三种Mode：  
+1. UNSPECIFIED
+    * 父不没有对子施加任何约束，子可以是任意大小（也就是未指定）
+    * (UNSPECIFIED在源码中的处理和EXACTLY一样。当View的宽高值设置为0的时候或者没有设置宽高时，模式为UNSPECIFIED
+2. EXACTLY
+    * 父决定子的确切大小，子被限定在给定的边界里，忽略本身想要的大小。
+    * (当设置width或height为match_parent时，模式为EXACTLY，因为子view会占据剩余容器的空间，所以它大小是确定的)
+3. AT_MOST
+    * 子最大可以达到的指定大小
+    * (当设置为wrap_content时，模式为AT_MOST, 表示子view的大小最多是多少，这样子view会根据这个上限来设置自己的尺寸)
+    * MeasureSpecs使用了二进制去减少对象的分配。
+
 
 ### MotionEvent 和 TouchSlop
 

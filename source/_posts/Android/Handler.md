@@ -15,6 +15,8 @@ comments: true
 
 为了让主线程能“适时”地处理新启动的线程所发送的消息，显然只能通过回调的方式来实现——开发者只要重写Handler类中处理消息的方法，当新启动的线程发送消息时，消息会发送到与之关联的MessageQueue，而Handler会不断从MessageQueue中获取并处理消息——这将导致Handler类中处理消息的方法被回调。
 
+**一个线程Thread对应一个Looper，一个Looper对应一个消息队列MessageQueue,一个消息队列MessageQueue中可以包含多条Message消息，一个线程中可以有多个Handler。**
+
 <!-- more -->
 
 Handler类的主要作用有两个：
@@ -24,15 +26,15 @@ Handler类的主要作用有两个：
 
 ### 关键类
 
-* Looper：
+#### Looper：
 
 每个线程只有一个Looper，它负责管理MessageQueue，会不断的从MessageQueue中取出消息，并将消息分给对应的Handler处理。
 
-* MessageQueue：
+#### MessageQueue：
 
-有Looper负责管理。它采取先进先出的方式来管理Message。
+由Looper负责管理。它采取先进先出的方式来管理Message。
 
-* Handler：
+#### Handler：
 
 它能把消息发送给Looper管理的MessageQueue，并负责处理Looper分给它的消息。
 
@@ -135,6 +137,79 @@ Handler类的主要作用有两个：
 
 Looper.loop()中一直在不断的从消息队列中通过MessageQueue的next方法获取Message，然后通过代码msg.target.dispatchMessage(msg)让该msg所绑定的Handler（Message.target）执行dispatchMessage方法以实现对Message的处理。
 
+### Handler三种发送方式
+
+#### sendMessage(Message msg)
+
+```java
+    public final boolean sendMessage(Message msg)
+    {
+        return sendMessageDelayed(msg, 0);
+    }
+    
+    public final boolean sendMessageDelayed(Message msg, long delayMillis)
+    {
+        if (delayMillis < 0) {
+            delayMillis = 0;
+        }
+        return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
+    }
+    
+    public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
+        MessageQueue queue = mQueue;
+        if (queue == null) {
+            RuntimeException e = new RuntimeException(
+                    this + " sendMessageAtTime() called with no mQueue");
+            Log.w("Looper", e.getMessage(), e);
+            return false;
+        }
+        return enqueueMessage(queue, msg, uptimeMillis);
+    }    
+    
+    private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
+        msg.target = this;
+        if (mAsynchronous) {
+            msg.setAsynchronous(true);
+        }
+        return queue.enqueueMessage(msg, uptimeMillis);
+    }
+```
+
+#### post(Runnable r)
+
+```java
+    public final boolean post(Runnable r)
+    {
+       return  sendMessageDelayed(getPostMessage(r), 0);
+    }
+    
+    private static Message getPostMessage(Runnable r) {
+        Message m = Message.obtain();
+        m.callback = r;
+        return m;
+    }
+    
+    public final Message obtainMessage()
+    {
+        return Message.obtain(this);
+    }    
+```
+
+#### obtainMessage.sendToTarget()
+
+```java
+    public final Message obtainMessage()
+    {
+        return Message.obtain(this);
+    }    
+    
+    public void sendToTarget() {
+        target.sendMessage(this);
+    }    
+```
+
+### 三种途径dispatchMessage
+
 ```java
     /**
      * Handle system messages here.
@@ -153,11 +228,16 @@ Looper.loop()中一直在不断的从消息队列中通过MessageQueue的next方
     }
 ```
 
-我们可以看到Handler提供了三种途径处理Message，而且处理有前后优先级之分：首先尝试让postXXX中传递的Runnable执行，其次尝试让Handler构造函数中传入的Callback的handleMessage方法处理，最后才是让Handler自身的handleMessage方法处理Message。
+我们可以看到Handler提供了三种途径处理Message，而且处理有前后优先级之分：
+- 首先尝试让postXXX中传递的Runnable执行， `msg.callback`
+- 其次尝试让Handler构造函数中传入的Callback的handleMessage方法处理， `mCallback`
+- 最后才是让Handler自身的handleMessage方法处理Message。 `handleMessage()`
 
 ---
 
-### 另外除了发送消息之外，我们还有以下几种方法可以在子线程中进行UI操作：
+### 子线程中进行UI操作
+
+另外除了发送消息之外，我们还有以下几种方法可以在子线程中进行UI操作：
 
 1. Handler.post()
 2. View.post()
@@ -307,6 +387,15 @@ getPostMessage() 方法中将消息的callback字段的值指定为传入的Runn
 如果当前的线程不等于UI线程(主线程)，就去调用Handler的post()方法，否则就直接调用Runnable对象的run()方法。
 
 通过以上所有源码的分析，我们已经发现了，不管是使用哪种方法在子线程中更新UI，其实背后的原理都是相同的，必须都要借助异步消息处理的机制来实现。
+
+总结一下就是
+
+- 调用Looper.prepare创建Looper和MessageQueue对象
+- Handler通过调用post将runnable发送给MessageQueue，或者通过调用sendMessage将Message发送给MessageQueue
+- MessageQueue对消息进行一个管理，什么时间哪条消息出栈一是看handler放进来时的意愿，二是看顺序
+- Looper.loop将消息循环起来，利用Handler去分发消息
+- 消息可以Message自己处理，也可以Handler去处理
+
 
 
 
