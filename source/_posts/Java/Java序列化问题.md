@@ -6,7 +6,9 @@ keywords: Java序列化问题
 comments: true
 date: 2019-02-25 09:53:10
 updated: 2019-02-25 09:53:10
-tags: Java序列化,Transient关键字
+tags: 
+  - Java序列化 
+  - Transient关键字
 description:
 ---
 
