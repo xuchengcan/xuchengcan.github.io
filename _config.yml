@@ -7,7 +7,7 @@ title: Chen_Nuo's Blog
 subtitle: Dream It Possible
 description: Android 开发 Technology Develop chennuo 晨诺
 author: 晨诺secret
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-next-5.1.0
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
