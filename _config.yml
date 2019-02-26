@@ -50,7 +50,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -date
+  order_by: -updated
 
 # Category & Tag
 default_category: uncategorized
@@ -126,3 +126,11 @@ live2d:
   react:
     opacityDefault: 1
     opacityOnHover: 0.2
+
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
