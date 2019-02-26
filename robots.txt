@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://chennuo.online/sitemap.xml
-Sitemap: http://chennuo.online/baidusitemap.xml
+Sitemap: https://chennuo.online/sitemap.xml
+Sitemap: https://chennuo.online/baidusitemap.xml
