@@ -40,7 +40,9 @@
       <category term="Java" scheme="http://chennuo.online/categories/Java/"/>
     
     
-      <category term="Java序列化,Transient关键字" scheme="http://chennuo.online/tags/Java%E5%BA%8F%E5%88%97%E5%8C%96-Transient%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <category term="Java序列化" scheme="http://chennuo.online/tags/Java%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+      <category term="Transient关键字" scheme="http://chennuo.online/tags/Transient%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     
   </entry>
   
@@ -183,7 +185,9 @@
       <category term="Android" scheme="http://chennuo.online/categories/Android/"/>
     
     
-      <category term="Android 应用安全防护和逆向分析" scheme="http://chennuo.online/tags/Android-%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E5%92%8C%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/"/>
+      <category term="Android" scheme="http://chennuo.online/tags/Android/"/>
+    
+      <category term="应用安全防护和逆向分析" scheme="http://chennuo.online/tags/%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E5%92%8C%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -288,15 +292,11 @@
     <published>2018-06-04T02:11:31.000Z</published>
     <updated>2018-06-04T02:11:31.000Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><h3 id="一款采用MVP模式的设计的仿造腾讯漫画的APP"><a href="#一款采用MVP模式的设计的仿造腾讯漫画的APP" class="headerlink" title="一款采用MVP模式的设计的仿造腾讯漫画的APP"></a>一款采用MVP模式的设计的仿造腾讯漫画的APP</h3><p><a href="https://github.com/zhhr1122/z_comic_new" target="_blank" rel="noopener">https://github.com/zhhr1122/z_comic_new</a></p><h3 id="WanAndroid客户端Flutter版"><a href="#WanAndroid客户端Flutter版" class="headerlink" title="WanAndroid客户端Flutter版"></a>WanAndroid客户端Flutter版</h3><p><a href="https://github.com/canhuah/WanAndroid" target="_blank" rel="noopener">https://github.com/canhuah/WanAndroid</a></p><p>在编写该案例过程中，遇到的一些问题，作者也做了总结：</p><p><a href="http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html" target="_blank" rel="noopener">http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html</a></p><h3 id="基于Flutter的开源中国客户端"><a href="#基于Flutter的开源中国客户端" class="headerlink" title="基于Flutter的开源中国客户端"></a>基于Flutter的开源中国客户端</h3><p><a href="https://github.com/yubo725/flutter-osc" target="_blank" rel="noopener">https://github.com/yubo725/flutter-osc</a></p><h3 id="超完整开源Flutter-Github客户端"><a href="#超完整开源Flutter-Github客户端" class="headerlink" title="超完整开源Flutter Github客户端"></a>超完整开源Flutter Github客户端</h3><p><a href="https://github.com/CarGuo/GSYGithubAppFlutter" target="_blank" rel="noopener">https://github.com/CarGuo/GSYGithubAppFlutter</a></p><h3 id="Android-骨架屏实现"><a href="#Android-骨架屏实现" class="headerlink" title="Android 骨架屏实现"></a>Android 骨架屏实现</h3><p><a href="https://github.com/sharish/ShimmerRecyclerView" target="_blank" rel="noopener">https://github.com/sharish/ShimmerRecyclerView</a></p><p><a href="https://github.com/ethanhua/Skeleton" target="_blank" rel="noopener">https://github.com/ethanhua/Skeleton</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="优秀开源项目记录"><a href="#优秀开源项目记录" class="headerlink" title="优秀开源项目记录"></a>优秀开源项目记录</h2><a id="more"></a><h3 id="一款采用MVP模式的设计的仿造腾讯漫画的APP"><a href="#一款采用MVP模式的设计的仿造腾讯漫画的APP" class="headerlink" title="一款采用MVP模式的设计的仿造腾讯漫画的APP"></a>一款采用MVP模式的设计的仿造腾讯漫画的APP</h3><p><a href="https://github.com/zhhr1122/z_comic_new" target="_blank" rel="noopener">https://github.com/zhhr1122/z_comic_new</a></p><h3 id="WanAndroid客户端Flutter版"><a href="#WanAndroid客户端Flutter版" class="headerlink" title="WanAndroid客户端Flutter版"></a>WanAndroid客户端Flutter版</h3><p><a href="https://github.com/canhuah/WanAndroid" target="_blank" rel="noopener">https://github.com/canhuah/WanAndroid</a></p><p>在编写该案例过程中，遇到的一些问题，作者也做了总结：</p><p><a href="http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html" target="_blank" rel="noopener">http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html</a></p><h3 id="基于Flutter的开源中国客户端"><a href="#基于Flutter的开源中国客户端" class="headerlink" title="基于Flutter的开源中国客户端"></a>基于Flutter的开源中国客户端</h3><p><a href="https://github.com/yubo725/flutter-osc" target="_blank" rel="noopener">https://github.com/yubo725/flutter-osc</a></p><h3 id="超完整开源Flutter-Github客户端"><a href="#超完整开源Flutter-Github客户端" class="headerlink" title="超完整开源Flutter Github客户端"></a>超完整开源Flutter Github客户端</h3><p><a href="https://github.com/CarGuo/GSYGithubAppFlutter" target="_blank" rel="noopener">https://github.com/CarGuo/GSYGithubAppFlutter</a></p><h3 id="Android-骨架屏实现"><a href="#Android-骨架屏实现" class="headerlink" title="Android 骨架屏实现"></a>Android 骨架屏实现</h3><p><a href="https://github.com/sharish/ShimmerRecyclerView" target="_blank" rel="noopener">https://github.com/sharish/ShimmerRecyclerView</a></p><p><a href="https://github.com/ethanhua/Skeleton" target="_blank" rel="noopener">https://github.com/ethanhua/Skeleton</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;一款采用MVP模式的设计的仿造腾讯漫画的APP&quot;&gt;&lt;a href=&quot;#一款采用MVP模式的设计的仿造腾讯漫画的APP&quot; class=&quot;headerlink&quot; title=&quot;一款采用MVP模式的设计的仿造腾讯漫画的APP&quot;&gt;&lt;/a
-      
+      &lt;h2 id=&quot;优秀开源项目记录&quot;&gt;&lt;a href=&quot;#优秀开源项目记录&quot; class=&quot;headerlink&quot; title=&quot;优秀开源项目记录&quot;&gt;&lt;/a&gt;优秀开源项目记录&lt;/h2&gt;
     
     </summary>
     

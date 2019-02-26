@@ -8,7 +8,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Java序列化,Transient关键字</tag>
+        <tag>Java序列化</tag>
+        <tag>Transient关键字</tag>
       </tags>
   </entry>
   <entry>
@@ -39,7 +40,8 @@
         <category>Android</category>
       </categories>
       <tags>
-        <tag>Android 应用安全防护和逆向分析</tag>
+        <tag>Android</tag>
+        <tag>应用安全防护和逆向分析</tag>
       </tags>
   </entry>
   <entry>
@@ -92,7 +94,7 @@
   <entry>
     <title><![CDATA[优秀开源项目记录]]></title>
     <url>%2F2018%2FAndroid%2F%E4%BC%98%E7%A7%80%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[一款采用MVP模式的设计的仿造腾讯漫画的APPhttps://github.com/zhhr1122/z_comic_new WanAndroid客户端Flutter版https://github.com/canhuah/WanAndroid 在编写该案例过程中，遇到的一些问题，作者也做了总结： http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html 基于Flutter的开源中国客户端https://github.com/yubo725/flutter-osc 超完整开源Flutter Github客户端https://github.com/CarGuo/GSYGithubAppFlutter Android 骨架屏实现https://github.com/sharish/ShimmerRecyclerView https://github.com/ethanhua/Skeleton]]></content>
+    <content type="text"><![CDATA[优秀开源项目记录 一款采用MVP模式的设计的仿造腾讯漫画的APPhttps://github.com/zhhr1122/z_comic_new WanAndroid客户端Flutter版https://github.com/canhuah/WanAndroid 在编写该案例过程中，遇到的一些问题，作者也做了总结： http://www.canhuah.com/Flutter实战之WanAndroid项目中碰到的问题.html 基于Flutter的开源中国客户端https://github.com/yubo725/flutter-osc 超完整开源Flutter Github客户端https://github.com/CarGuo/GSYGithubAppFlutter Android 骨架屏实现https://github.com/sharish/ShimmerRecyclerView https://github.com/ethanhua/Skeleton]]></content>
       <categories>
         <category>开源项目</category>
       </categories>
