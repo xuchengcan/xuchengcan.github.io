@@ -1140,7 +1140,7 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background-image: url("/images/banner.jpg");
+  background: url("/images/banner.jpg");
 }
 .header-inner {
   position: relative;
@@ -1158,12 +1158,12 @@ pre .javascript .function {
   position: relative;
   display: inline-block;
   padding: 0 40px;
-  color: #222;
+  color: #72574e;
   background: transparent;
   border-bottom: none;
 }
 .brand:hover {
-  color: #222;
+  color: #72574e;
 }
 .logo {
   display: inline-block;
@@ -1182,7 +1182,7 @@ pre .javascript .function {
 .site-subtitle {
   margin-top: 10px;
   font-size: 16px;
-  color: #999;
+  color: #72574e;
 }
 .use-motion .brand {
   opacity: 0;
@@ -1999,7 +1999,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1818ff;
+  background: #d6ba83;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2129,13 +2129,10 @@ pre .javascript .function {
 .footer-inner {
   text-align: center;
 }
-#animate {
-  animation: iconAnimate 1.33s ease-in-out infinite;
-}
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: #ff0000;
+  color: #808080;
 }
 .powered-by,
 .theme-info {
@@ -2374,29 +2371,6 @@ i.fa {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   color: #ccc;
-}
-#needsharebutton-postbottom {
-  position: relative;
-  cursor: pointer;
-  height: 26px;
-}
-#needsharebutton-postbottom .btn {
-  display: initial;
-  padding: 1px 4px;
-  border: 1px solid #222;
-  border-radius: 3px;
-}
-#needsharebutton-float {
-  position: fixed;
-  bottom: 38px;
-  left: -8px;
-  z-index: 9999;
-  cursor: pointer;
-}
-#needsharebutton-float .btn {
-  padding: 0 10px 0 14px;
-  border: 1px solid #222;
-  border-radius: 4px;
 }
 .page-archive .archive-page-counter {
   position: relative;
